@@ -1,0 +1,7 @@
+tr_form_examples.formExamples:
+  path: '/tr_form_examples/form'
+  defaults:
+    _form: 'Drupal\tr_form_examples\Form\ExampleForm'
+    _title: 'Form Prove Drupal'
+  requirements:
+    _permission: 'access content'

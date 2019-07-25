@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains tr_form_examples.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function tr_form_examples_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the tr_form_examples module.
+    case 'help.page.tr_form_examples':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Modulo de implementacion prueba Form Install') . '</p>';
+      return $output;
+
+    default:
+  }
+}

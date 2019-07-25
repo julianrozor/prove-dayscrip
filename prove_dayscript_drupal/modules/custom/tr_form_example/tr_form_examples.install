@@ -1,0 +1,75 @@
+<?php
+/**
+* Implements hook_schema().
+*
+* Defines the database tables used by this module.
+*
+* @see hook_schema()
+*
+* @ingroup lotus
+*/
+function tr_form_examples_schema() {
+  $schema['example_users'] = array(
+    'description' => 'Stores example person entries for demonstration purposes.',
+    'fields' => array(
+      'pid' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique person ID.',
+      ),
+      'name' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Name of the person.',
+      ),
+      'identification' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Identification Number of the person.',
+      ),
+      'date_birthday' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Birthday Number of the person.',
+      ), 
+      'rol' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Rol of the person.',
+      ),            
+      'status' => array(
+        'type' => 'int',
+        'not null' => FALSE,
+        'default' => 0,
+        'size' => 'tiny',
+        'description' => 'Status of the person.',
+      ),
+      'create' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Create of the person.',
+      ),       
+    ),
+    'primary key' => array('pid'),
+    'indexes' => array(
+      'name' => array('name'),
+      'identification' => array('identification'),
+      'date_birthday' => array('date_birthday'),
+      'rol' => array('rol'),
+      'status' => array('status'),
+      'create' => array('create'),
+    ),
+  );
+
+  return $schema;
+}
